@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.1 Transitional//EN">
+<html>
+
+<head>
+<link rel='stylesheet' href='style.css'>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Battleships</title>
+<!--FALTA ICON-->
+<link rel="shortcut icon" href="####">
+<script language="javascript" src="jquery.js" type="text/javascript"></script>   
+<script language="javascript" src="scripts.js" type="text/javascript"></script>
+    <script language="javascript" src="server.js" type="text/javascript"></script>  
+</head>
+
+<body>
+    <div id="title"><img alt="title" src='images/title.png'></div>
+    
+    <div id="login_container">
+    
+    <div id="login">
+        <img src='images/utilizador.png' alt="user"><br>
+        <input class="login_user" id="username" type="text" maxlength="12" onkeypress="if (event.keyCode == 13) validate();">
+        <br>
+        <img src='images/chave.png' alt="key" class="login_chave"><br>
+        <input class="login_pass" id="password" type="password" maxlength="12" onkeypress="if (event.keyCode == 13) validate();">
+    </div>
+    </div>
+    
+    
+    <div id="menu">
+        <button id="computer_btn" class="menu" onclick="menu_select('single');">Jogar contra<br>computador</button>
+        <br>
+        <button id="player_btn" class="menu" onclick="menu_select('multi');">Jogar contra<br>humano</button>
+        <br>
+        <button id="highscore_btn" class="menu" onclick="menu_select('high');">&nbsp;Highscores&nbsp;</button>
+    </div>
+    
+    
+    
+    <div id="single">
+        
+        <div id="who"></div>
+        
+        <div id="player_table_container">
+            
+        </div>
+        
+        <div id="score"></div>
+        <div id="waiting">Please wait...
+            <br><img class="loading" src="images/loading.gif" alt="loading, please wait">
+            <br><button class="leave" onclick="leave()">Cancelar</button>
+        </div>
+        <div id="boat_selection">
+            Navios
+            <hr>
+            <button id="5" onclick="Bselect(this.id);"><img src='sprites/AircraftCarrier.png' alt="5"></button>
+            <br>
+            <button id="4" onclick="Bselect(this.id);"><img onclick="Bselect(4);" src='sprites/Submarine.png' alt="4"></button>
+            <br>
+            <button id="3" onclick="Bselect(this.id);"><img onclick="Bselect(3);" src='sprites/BattleShip.png' alt="3"></button>
+            <br>
+            <button id="2" onclick="Bselect(this.id);"><img onclick="Bselect(2);" src='sprites/Cruiser.png' alt="3"></button>
+            <br>
+            <button id="1" onclick="Bselect(this.id);"><img onclick="Bselect(1);" src='sprites/PatrolBoat.png' alt="2"></button>
+            <br>
+            <div id="rodar"><button class="girar" id="6" onclick="orient();"><img style="width:64px;height:64px;" src='images/rotate.png' alt="rotate"></button>   </div>
+        </div>
+  
+    </div>
+    
+    
+    <div id="start"><br><button onclick="start()">Start</button></div>
+    <div id="quit"><br><button onclick="gameover('D')">Desistir</button></div>
+    
+    
+    <div id="high">
+    </div>
+        
+</body>
+    
+</html>
